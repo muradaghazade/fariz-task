@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div>
+    <!-- Background image -->
+    <div
+      class="p-5 text-center bg-image"
+      style="
+        /* background-image: url('https://lp-cms-production.imgix.net/2019-06/c2b3fb45d97ccbde2a9f60c4294016a2-lodz.jpg'); */
+        height: 400px;
+        background-size: cover;
+        height: 800px;
+      "
+    >
+      <div class="mask p-5" style="background-color: rgba(0, 0, 0, 0.6);">
+        <div class="d-flex h-100">
+          <div class="text-white">
+            <h1 class="mb-3">{{ article.title }}</h1>
+            <p>{{ article.content }}</p>
+            <div style="text-align: start;">
+            <h2>{{ article.author.username }}</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Background image -->
+  </div>
+{% endblock %}
