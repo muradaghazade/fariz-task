@@ -5,6 +5,7 @@ class IndexView(ListView):
     model = Article
     template_name = 'index.html'
     context_object_name = 'articles'
+    paginate_by = 6
     queryset = Article.objects.order_by("-id")
 
     def get_queryset(self):

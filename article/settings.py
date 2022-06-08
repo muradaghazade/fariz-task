@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
+from django.urls import reverse_lazy
 from pathlib import Path
 import os
 
@@ -41,6 +42,7 @@ INSTALLED_APPS = [
 
     #local apps
     'core.apps.CoreConfig',
+    'accounts.apps.AccountsConfig',
 ]
 
 MIDDLEWARE = [
@@ -118,6 +120,10 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
+
+LOGIN_REDIRECT_URL = reverse_lazy('core:index')
+
+LOGOUT_REDIRECT_URL = reverse_lazy('account:login')
 
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
